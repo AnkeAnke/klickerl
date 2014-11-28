@@ -115,7 +115,7 @@ function Tutorial() {
         }
 
         
-        DrawScaledPos(context, images.data[gerd], 1300, 400, 600, 600);
+        DrawScaledPos(context, images.data[gerd], 1450, 400, 300, 600);
 
         context.beginPath();
         context.lineWidth = "6";
