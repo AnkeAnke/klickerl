@@ -8,7 +8,8 @@ canvas.height = window.innerHeight;
 document.body.appendChild(canvas);
 var context = canvas.getContext("2d");
 
-var mousePos = new Vector(0,0);
+var mousePos = new Vector(0, 0);
+var tutorial = new Tutorial();
 
 // Game variables
 var playTime = 0;
@@ -308,6 +309,7 @@ function update(timeSinceLastFrame) {
     playTime += timeSinceLastFrame;
 
     UpdateCookies(timeSinceLastFrame);
+    tutorial.Update(timeSinceLastFrame);
 
     canvas.onmousedown = function (canvas) {
         //alert('canvas clicked ' + canvas.clientX)
@@ -333,23 +335,12 @@ var render = function (timeSinceLastFrame) {
     context.fillStyle = "#ffffff";
     context.fillRect(0, 0, canvas.width, canvas.height);
 
-    // Timer & length
-    {
-        context.fillStyle = "#fff";
-        context.globalAlpha = 0.5;
-        context.font = "bold 20px sans-serif";
-        context.globalAlpha = 1.0;
-    }
+    // Draw the game.
+    DrawGameContent(context);
 
-    // Draw debug image
-    {
-        //for (var key in images.data)
-        //{
-        //    if (images.data[key].cookieW > 0.001)
-        //        DrawScaled(context, images.data[key]);
-        //}
-        DrawGameContent(context);
-    }
+    tutorial.Draw(context);
+
+    // Cursor
     context.drawImage(images.data["cursor"], mousePos.x, mousePos.y, 50, 50);
 }
 

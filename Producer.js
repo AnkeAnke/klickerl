@@ -20,11 +20,11 @@ function DrawProducers(canvas)
 function  InitializeProducers()
 {
     producers[0] = new Producer("tree", 0, 0.5, 100);
-    producers[1] = new Producer("elf", 1, 5, 500);
-    producers[2] = new Producer("robot", 2, 50, 2500);
-    producers[3] = new Producer("oven", 3, 500, 10000);
-    producers[4] = new Producer("factory", 4, 5000, 60000);
-    producers[5] = new Producer("rocket", 5, 50000, 42000);
+    producers[1] = new Producer("elf", 1, 5, 700);
+    producers[2] = new Producer("robot", 2, 50, 5000);
+    producers[3] = new Producer("oven", 3, 500, 40000);
+    producers[4] = new Producer("factory", 4, 5000, 30000);
+    producers[5] = new Producer("rocket", 5, 50000, 210000);
     producers[6] = new Universe();
 }
 

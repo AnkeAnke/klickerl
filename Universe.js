@@ -194,7 +194,7 @@ function Universe() {
     this.meteorImage = images.data["meteor"];
     this.sateliteImage = images.data["satelite"];
     this.income = 500000;
-    this.cost = 42000000;
+    this.cost = 420000000;
     this.stars = [];
     this.instances = -1;
     this.interactingStars = [];
@@ -313,9 +313,7 @@ function Universe() {
 
         DrawScaledPos(canvas, images.data["textBG"], 700, 550, 500, 200);
         DrawScaledText(canvas, cookieText + "c", 950, 600, 60, "center");
-        canvas.fillStyle = "#999999";
         DrawScaledText(canvas, "+" + cookiePlusText + " s", 950, 670, 30, "center");
-        canvas.fillStyle = "#ffffff";
 
         if (numProducersUnlocked < maxNumProducers - 1) {
             DrawScaledPos(canvas, images.data["anke"], 610, 960, 150, 30);
