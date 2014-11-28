@@ -11,12 +11,14 @@ function Tutorial() {
     this.step = Step.None;
     this.timeSinceBegin = 0;
 
+    this.Start = function () {
+        this.step = Step.NumKipferl;
+    }
+
     this.Continue = function () {
         this.timeSinceBegin = 0;
         switch (this.step) {
             case Step.None:
-                if (numProducersUnlocked < 1)
-                    this.step = Step.NumKipferl;
                 return;
             case Step.NumKipferl:
                 this.step = Step.ClickKipferl;
