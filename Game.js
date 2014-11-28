@@ -17,6 +17,10 @@ var playTime = 0;
 var numLoadedPictures = 0;
 var numPictures = 1;
 
+var konami = [38,38,40,40, 37,39,37,39, 66, 65];
+var konamiProgress = 0;
+
+
 // Key press.
 var keyPressCode = -1;
 
@@ -25,7 +29,15 @@ function createfunction(i) {
 }
 
 document.onkeydown = function (modifier) {
-    keyPressCode = modifier.keyCode
+    keyPressCode = modifier.keyCode;
+    if (tutorial.derping) return;
+
+    if (keyPressCode == konami[konamiProgress]) {
+        konamiProgress++;
+        if(konamiProgress == 10)
+            tutorial.derping = true;
+    } else
+        konamiProgress = 0;
 }
 
 function sign(number) {
@@ -249,6 +261,12 @@ var loadImages = function () {
     images.data["GerdOff"].cookieY = 935;
     images.data["GerdOff"].cookieW = 50;
     images.data["GerdOff"].cookieH = 50;
+    images.data["SchorschOn"] = new Image();
+    images.data["SchorschOn"].mouseclick = function () { };
+    images.data["SchorschOn"].cookieW = 0;
+    images.data["SchorschOff"] = new Image();
+    images.data["SchorschOff"].mouseclick = function () { };
+    images.data["SchorschOff"].cookieW = 0;
 
 
     images.numImages = 0;
@@ -319,6 +337,8 @@ var loadImages = function () {
 
     images.data["GerdOn"].src = 'GerdOn.png';
     images.data["GerdOff"].src = 'GerdOff.png';
+    images.data["SchorschOn"].src = 'SchorschOn.png';
+    images.data["SchorschOff"].src = 'SchorschOff.png';
 }
 
 // Gamelogic updates.

@@ -10,6 +10,7 @@
 function Tutorial() {
     this.step = Step.None;
     this.timeSinceBegin = 0;
+    this.derping = false;
 
     this.Start = function () {
         this.step = Step.NumKipferl;
@@ -43,8 +44,10 @@ function Tutorial() {
     }
 
     this.Draw = function (context) {
-                
-        var gerd = (Math.sin(this.timeSinceBegin * 10) > 0 || this.timeSinceBegin > 2) ? "GerdOff" : "GerdOn";
+        if (numProducersUnlocked >= 1) return;
+        var tutor = (this.derping)? "Gerd" : "Schorsch";
+        var gerd = tutor;
+        gerd += (Math.sin(this.timeSinceBegin * 10) > 0 || this.timeSinceBegin > 2) ? "Off" : "On";
 
         switch (this.step) {
             case Step.None:
@@ -112,12 +115,11 @@ function Tutorial() {
                 break;
             case Step.Universe:
                 DrawScaledTextNormal(context, "Now go and conquer the universe!", 1600, 200, 50, "center");
-                gerd = "GerdOn";
+                gerd = tutor + "On";
                 break;
         }
 
-        
-        DrawScaledPos(context, images.data[gerd], 1450, 400, 300, 600);
+        DrawScaledPos(context, images.data[gerd], 1300, 400, 600, 600);
 
         context.beginPath();
         context.lineWidth = "6";
