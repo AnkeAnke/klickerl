@@ -194,7 +194,7 @@ function Universe() {
     this.meteorImage = images.data["meteor"];
     this.sateliteImage = images.data["satelite"];
     this.income = 500000;
-    this.cost = 420000000;
+    this.cost = 15000000;
     this.stars = [];
     this.instances = -1;
     this.interactingStars = [];

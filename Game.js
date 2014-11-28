@@ -236,6 +236,20 @@ var loadImages = function () {
     images.data[" "].mouseclick = function () { };
     images.data[" "].cookieW = 0;
 
+    1500, 300, 200, 70
+    images.data["GerdOn"] = new Image();
+    images.data["GerdOn"].mouseclick = function () { tutorial.Continue()};
+    images.data["GerdOn"].cookieX = 1500;
+    images.data["GerdOn"].cookieY = 300;
+    images.data["GerdOn"].cookieW = 200;
+    images.data["GerdOn"].cookieH = 70;
+    images.data["GerdOff"] = new Image();
+    images.data["GerdOff"].mouseclick = function () { tutorial.Continue() };
+    images.data["GerdOff"].cookieX = 15;
+    images.data["GerdOff"].cookieY = 935;
+    images.data["GerdOff"].cookieW = 50;
+    images.data["GerdOff"].cookieH = 50;
+
 
     images.numImages = 0;
     for (var key in images.data)
@@ -302,6 +316,9 @@ var loadImages = function () {
     images.data["c"].src = 'c.png';
     images.data["s"].src = 'cs.png';
     images.data[" "].src = 'space.png';
+
+    images.data["GerdOn"].src = 'GerdOn.png';
+    images.data["GerdOff"].src = 'GerdOff.png';
 }
 
 // Gamelogic updates.
@@ -334,7 +351,7 @@ var render = function (timeSinceLastFrame) {
     // Background
     context.fillStyle = "#ffffff";
     context.fillRect(0, 0, canvas.width, canvas.height);
-
+    context.fillStyle = "#0000ff";
     // Draw the game.
     DrawGameContent(context);
 

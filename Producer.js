@@ -23,8 +23,8 @@ function  InitializeProducers()
     producers[1] = new Producer("elf", 1, 5, 700);
     producers[2] = new Producer("robot", 2, 50, 5000);
     producers[3] = new Producer("oven", 3, 500, 40000);
-    producers[4] = new Producer("factory", 4, 5000, 30000);
-    producers[5] = new Producer("rocket", 5, 50000, 210000);
+    producers[4] = new Producer("factory", 4, 5000, 300000);
+    producers[5] = new Producer("rocket", 5, 50000, 2100000);
     producers[6] = new Universe();
 }
 

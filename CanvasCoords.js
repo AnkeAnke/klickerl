@@ -47,13 +47,13 @@ function DrawScaledPosCrop(context, img, x, y, w, h, sx, sy, sw, sh) {
     var coord = GetCoords(x, y, w, h);
     context.drawImage(img, sx, sy, sw, sh, coord.x, coord.y, coord.w, coord.h);
 }
-//function DrawScaledText(context, text, x, y, size, align) {
-//    // 0.8 is a fix to make it look good.
-//    var coord = GetCoords(x, y+size*0.8, size,0);
-//    context.font = "" + (coord.w).toFixed(0) + "px Arial";
-//    context.textAlign = align;
-//    context.fillText(text, coord.x, coord.y);
-//}
+
+function DrawScaledTextNormal(context, text, x, y, size, align) {
+    var coord = GetCoords(x, y+size, size,0);
+    context.font = (coord.w).toFixed(0) + "px Arial";
+    context.textAlign = align;
+    context.fillText(text, coord.x, coord.y);
+}
 
 function DrawScaledText(context, text, x, y, size, align) {
     var coord = GetCoords(x, y, size * letterRatio, size);
